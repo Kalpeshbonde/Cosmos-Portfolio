@@ -1,0 +1,79 @@
+/* ==========================================
+   COSMIC BACKGROUND STYLES - OPTIMIZED
+   ========================================== */
+
+.cosmos-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background: #000000; /* Deep space black */
+  pointer-events: none;
+}
+
+/* Starfield Canvas */
+.starfield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Cosmic Grid */
+.cosmic-grid {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(rgba(100, 150, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 150, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform-origin: center;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Subtle ambient glow from bottom */
+.cosmic-glow {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(80, 120, 255, 0.08) 0%,
+    rgba(120, 80, 255, 0.04) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .cosmic-grid {
+    background-size: 60px 60px;
+    opacity: 0.3;
+  }
+
+  .cosmic-glow {
+    opacity: 0.5;
+  }
+}
+
+/* Ensure smooth scrolling performance */
+@media (prefers-reduced-motion: reduce) {
+  .cosmos-bg * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
