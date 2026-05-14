@@ -3,14 +3,15 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion.js";
 
 const NAV_ITEMS = [
+  { label: "Home", href: "#top" },
+  { label: "Life", href: "#life" },
+  { label: "Books", href: "#books" },
   { label: "About", href: "#about" },
-  { label: "Ventures", href: "#ventures" },
-  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("#about");
+  const [active, setActive] = useState("#top");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function Navbar() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.id;
-            setActive(id === "top" ? "#about" : `#${id}`);
+            setActive(id === "top" ? "#top" : `#${id}`);
           }
         });
       },
