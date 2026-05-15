@@ -4,9 +4,8 @@ import { fadeIn } from "../utils/motion.js";
 
 const NAV_ITEMS = [
   { label: "Home", href: "#top" },
-  { label: "Life", href: "#life" },
+  { label: "about", href: "#about" },
   { label: "Books", href: "#books" },
-  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
